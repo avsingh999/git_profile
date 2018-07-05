@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.slick-slider{
+  text-align: center;
+}
+input{
+  margin-bottom: 10px;
+}
+.slick-slider H3{
+  vertical-align: middle;
+}
+.slick-slider img{
+  margin: 0 auto;
+}
+
+.red-border{
+  border: red solid;
+}
