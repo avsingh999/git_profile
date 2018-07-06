@@ -4,10 +4,13 @@ Create Simple React Application
 
 ```
 npm install
-
 ```
 
 ## Run
 ```
 npm start
+```
+or
+```
+yarn start
 ```
