@@ -1,6 +1,6 @@
 Create Simple React Application
 
-## Install dependencies
+## Install packages
 
 ```
 npm install
