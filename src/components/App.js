@@ -18,15 +18,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("****************")
        this.props.fetchProfile();
 
   }
-
- componentWillMount() {
-  //  this.props.fetchProfile();
-  console.log("&&&&&&&&&&&&")
- }
 
 
   render() {
@@ -35,14 +29,14 @@ class App extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="Git" onClick={() => this.setState({ currentTab: 'slider' })}>Git Profile</a>
+              <a onClick={() => this.setState({ currentTab: 'slider' })}>Git Profile</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#" onClick ={() => this.setState({ currentTab:'slider'})}>
+            <NavItem eventKey={1} onClick ={() => this.setState({ currentTab:'slider'})}>
               Slider
             </NavItem>
-            <NavItem eventKey={2} href="#" onClick={() => this.setState({ currentTab: 'profile' })}>
+            <NavItem eventKey={2} onClick={() => this.setState({ currentTab: 'profile' })}>
               Profile  
             </NavItem>
           </Nav>
