@@ -6,9 +6,9 @@ export function fetchProfile() {
         let header = new Headers({
           "Content-Type": "application/json",
           Authorization:
-            "token 43fcbaff8dba3a4b1bda830f4a1deb8cd5b6c99f"
+            "token Paste_your_Token"
         });
-        fetch("https://api.github.com/users/avsingh999", {
+        fetch("https://api.github.com/users/Your_User_name", {
           method: "GET",
           headers: header
         })
@@ -28,7 +28,7 @@ export function saveProfile(profile) {
         let header = new Headers({
           "Content-Type": "application/json",
           Authorization:
-            "token 43fcbaff8dba3a4b1bda830f4a1deb8cd5b6c99f"
+            "token Paste_your_Token"
         });
         fetch("https://api.github.com/user", {
             method: "PATCH",
