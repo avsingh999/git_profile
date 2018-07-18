@@ -8,7 +8,7 @@ export function fetchProfile() {
           Authorization:
             "token Paste_your_Token"
         });
-        fetch("https://api.github.com/users/Your_User_name", {
+        fetch("https://api.github.com/users/avsingh999", {
           method: "GET",
           headers: header
         })
