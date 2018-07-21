@@ -10,26 +10,59 @@ import {
 
 import Profile from '../containers/Profile';
 import Slider from '../containers/Slider';
+import Search from './Search';
 
 class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      currentTab : 'slider'
+      currentTab : 'slider',
+      jsonList: [],
+      seacrher:false,
+      name:''
     }
   }
+  lis = ['asd']
 
   componentDidMount() {
        this.props.fetchProfile();
 
   }
+  SearchUser = (event) => {
+
+  
+    if(event.target.value===''){
+      // console.log("No search")
+      this.setState({
+        seacrher:false,
+        currentTab:'slider'
+      })
+    }
+    else{
+      this.setState({
+        seacrher:true,
+        currentTab:'serach'
+      })
+    }
+    this.setState({
+      jsonList:lis
+    })
+  }
+
+  changeTab = () => {
+    this.setState({
+      currentTab:'search'
+    })
+  }
 
 
   render() {
+    // console.log(this.state.jsonList)
+
     return (
     <div>
-        <Navbar inverse collapseOnSelect>
+        <Navbar inverse >
           <Navbar.Header>
             <Navbar.Brand>
               <a onClick={() => this.setState({ currentTab: 'slider' })} style={{cursor:'pointer'}}>Git Profile</a>
@@ -43,11 +76,10 @@ class App extends Component {
             <NavItem eventKey={2} onClick={() => this.setState({ currentTab: 'profile' })}>
               Profile  
             </NavItem>
-            </Nav>
-           
+            </Nav> 
             <Nav pullRight>
             <FormGroup>
-            <FormControl type="text" placeholder="Search" style={{margin:'10px 0 0 0'}}/>
+            <FormControl onChange={this.SearchUser} type="text" placeholder="Search" style={{margin:'10px 0 0 0'}}/>
             </FormGroup>
             
            </Nav>
@@ -55,8 +87,9 @@ class App extends Component {
 
         </Navbar>
         <div>
-          {this.state.currentTab === 'slider' ? <Slider /> : false}
+          {this.state.currentTab === 'slider' ? <Slider /> :false}
           {this.state.currentTab === 'profile' ? <Profile /> : false}
+          {this.state.seacrher === true ? <Search search_name={this.state.jsonList}/>:false}
         </div>
         </div>
         
