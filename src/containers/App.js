@@ -13,4 +13,5 @@ const App = connect(
     false,
     mapDispatchToProps
 )(AppComponent)
+
 export default App;
